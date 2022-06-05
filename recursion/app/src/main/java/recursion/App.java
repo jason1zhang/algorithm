@@ -20,5 +20,16 @@ public class App {
         System.out.println("2. Palindrome");
         String input2 = "racecar";
         System.out.printf("Is the string {%s} is a palindrom? {%b}\n\n", input2, StringRecursion.isPalindrome(input2));
+
+        // Other Recursion Demo
+        System.out.println("\n------------------- Other Recursion -------------------");
+        System.out.println("1. Decimal to Binary");
+        int number1 = 233;
+        System.out.printf("The decimal number {%d} converted to the binary is {%s}\n\n", number1, OtherRecursion.DecimalToBinary(number1, ""));
+
+        System.out.println("2. Sum of Natural Numbers");
+        int number2 = 10;
+        System.out.printf("The sum of natural numbers from 1 to {%d} is {%d}\n\n", number2, OtherRecursion.SumOfNumbers(number2));
+
     }
 }

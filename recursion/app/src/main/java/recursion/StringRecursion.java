@@ -54,8 +54,6 @@ public class StringRecursion {
     /**
      * Recusion 2: check if a string is a palindrome, 2nd implementation
      * 
-     * Note: Youtube channel "the Simple Engineer" - "Recursion in Programming - Full Course", at time 0:27:50 
-     * 
      * @param input a string
      * @return true if the string is a palindrome, otherwise false
      */
