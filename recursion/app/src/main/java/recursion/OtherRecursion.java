@@ -1,5 +1,13 @@
 package recursion;
 
+/**
+ * Recursive algorithm implementations for Other data structures.
+ * 
+ * @author Jason Zhang
+ * @version 1.0
+ * @since 2022-06-03
+ */
+
 public class OtherRecursion {
     /**
      * Recursion 1: Decimal to Binary number conversion, first implementation
@@ -48,8 +56,6 @@ public class OtherRecursion {
     /**
      * Recursion 2: Sum of Natural Numbers, second implementation
      * 
-     * Note: Youtube channel "the Simple Engineer" - "Recursion in Programming - Full Course", at time 0:38:50 
-     * 
      * @param number an integer
      * @return the sum of natural numbers from 1 to the number
      */
@@ -60,4 +66,18 @@ public class OtherRecursion {
 
         return number + SumOfNumbers(number - 1);
     }      
+
+    /**
+     * Recursion 3: Fibonacci Number, first implementation
+     * 
+     * @param num an integer
+     * @return the fibonacci number of an integer
+     */    
+    public static long fib(long num) {
+        if ((num == 0) || (num == 1)) {
+            return num;
+        } else {
+            return fib(num - 1) + fib(num - 2);
+        }
+    }   
 }

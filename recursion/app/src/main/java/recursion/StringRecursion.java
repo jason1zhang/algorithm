@@ -1,5 +1,13 @@
 package recursion;
 
+/**
+ * Recursive algorithm implementations for String data structure.
+ * 
+ * @author Jason Zhang
+ * @version 1.0
+ * @since 2022-06-01
+ */
+
 public class StringRecursion {
 
     /**

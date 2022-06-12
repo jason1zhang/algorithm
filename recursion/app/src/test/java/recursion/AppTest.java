@@ -9,6 +9,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
+
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
@@ -17,11 +19,13 @@ class AppTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"racecar", "kayak"})
+    @DisplayName("Test isPalindrome recursive function")
     void isPalindromeTest(String input) {
         assertTrue(StringRecursion.isPalindrome(input));
     }
 
     @Test
+    @DisplayName("Test DecimalToBinary recursive function")
     void DecimalToBinaryTest() {
         assertEquals("110", OtherRecursion.DecimalToBinary(6, ""));
     }
