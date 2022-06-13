@@ -18,6 +18,14 @@ public class ListRecursion {
      * @return the new head of the reversed list
      */
     public static ListNode<Integer> reverseList(ListNode<Integer> head) {
-        return null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode<Integer> p = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return p;
     }
 }

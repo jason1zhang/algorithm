@@ -10,6 +10,8 @@ package recursion;
 
 import java.util.Arrays;
 
+import structures.ListNode;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -19,6 +21,19 @@ public class App {
         // System.out.println(new App().getGreeting());
 
         // String Recursion Demo
+        StringRecursion();
+
+        // Array Recursion Demo
+        ArrayRecursion();
+
+        // List Recursion Demo
+        ListRecursion();
+
+        // Other Recursion Demo
+        OtherRecursion();        
+    }
+
+    private static void StringRecursion() {
         System.out.println("\n------------------- String Recursion -------------------");
         System.out.println("1. String Reversal");
         String input1 = "Hello";
@@ -27,8 +42,27 @@ public class App {
         System.out.println("2. Palindrome");
         String input2 = "racecar";
         System.out.printf("Is the string {%s} is a palindrom? {%b}\n\n", input2, StringRecursion.isPalindrome(input2));
+        
+    }
 
-        // Other Recursion Demo
+    private static void ArrayRecursion() {
+        System.out.println("\n------------------- Array Recursion -------------------");
+        System.out.println("1. Binary Search");
+        int[] nums1 = { 1, 3, 4, 5, 8, 9, 10 };
+        int target1 = 3;
+        System.out.printf("The index of the target {%d} in the array is {%d}.\n\n", target1,
+                ArrayRecursion.binarySearch(nums1, 0, nums1.length - 1, target1));
+
+        System.out.println("2. Merge Sort");
+        int[] nums2 = { 5, 3, 12, 9, 1 };
+        System.out.print("The sort array is ");
+        ArrayRecursion.mergeSort(nums2, 0, nums2.length - 1);
+        Arrays.stream(nums2)
+                .forEach(num -> System.out.print(num + " "));
+        System.out.println("\n");                 
+    }
+
+    private static void OtherRecursion() {
         System.out.println("\n------------------- Other Recursion -------------------");
         System.out.println("1. Decimal to Binary");
         int number1 = 233;
@@ -44,20 +78,24 @@ public class App {
         int number3 = 6;
         System.out.printf("The fibonacci of {%d} is {%d}.\n\n", number3, OtherRecursion.fib(number3));
 
-        // Array Recursion Demo
-        System.out.println("\n------------------- Array Recursion -------------------");
-        System.out.println("1. Binary Search");
-        int[] nums1 = { 1, 3, 4, 5, 8, 9, 10 };
-        int target1 = 3;
-        System.out.printf("The index of the target {%d} in the array is {%d}.\n\n", target1,
-                ArrayRecursion.binarySearch(nums1, 0, nums1.length - 1, target1));
+    }
 
-        System.out.println("2. Merge Sort");
-        int[] nums2 = { 5, 3, 12, 9, 1 };
-        System.out.print("The sort array is ");
-        ArrayRecursion.mergeSort(nums2, 0, nums2.length - 1);
-        Arrays.stream(nums2)
-                .forEach(num -> System.out.print(num + " "));
+    private static void ListRecursion() {
+        System.out.println("\n------------------- List Recursion -------------------");
+        System.out.println("1. List Reversal");
+        ListNode<Integer> n1 = new ListNode<>(1);
+        ListNode<Integer> n2 = new ListNode<>(2);
+        ListNode<Integer> n3 = new ListNode<>(3);
+        ListNode<Integer> n4 = new ListNode<>(4);
+        ListNode<Integer> n5 = new ListNode<>(5);
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
 
+        ListNode<Integer> head1 = ListRecursion.reverseList(n1);
+        System.out.print("The reversal of the list is ");
+        head1.printList();
+        System.out.println("\n");        
     }
 }
