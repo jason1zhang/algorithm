@@ -62,24 +62,6 @@ public class App {
         System.out.println("\n");                 
     }
 
-    private static void OtherRecursion() {
-        System.out.println("\n------------------- Other Recursion -------------------");
-        System.out.println("1. Decimal to Binary");
-        int number1 = 233;
-        System.out.printf("The decimal number {%d} converted to the binary is {%s}\n\n", number1,
-                OtherRecursion.DecimalToBinary(number1, ""));
-
-        System.out.println("2. Sum of Natural Numbers");
-        int number2 = 10;
-        System.out.printf("The sum of natural numbers from 1 to {%d} is {%d}.\n\n", number2,
-                OtherRecursion.SumOfNumbers(number2));
-
-        System.out.println("3. Fibonacci number");
-        int number3 = 6;
-        System.out.printf("The fibonacci of {%d} is {%d}.\n\n", number3, OtherRecursion.fib(number3));
-
-    }
-
     private static void ListRecursion() {
         System.out.println("\n------------------- List Recursion -------------------");
         System.out.println("1. List Reversal");
@@ -97,5 +79,42 @@ public class App {
         System.out.print("The reversal of the list is ");
         head1.printList();
         System.out.println("\n");        
+
+        System.out.println("2. Merge two sorted lists");
+        ListNode<Integer> n11 = new ListNode<>(1);  // head of first sorted list
+        ListNode<Integer> n22 = new ListNode<>(3);
+        ListNode<Integer> n33 = new ListNode<>(5);
+        n11.next = n22;
+        n22.next = n33;
+
+        ListNode<Integer> n44 = new ListNode<>(2);  // head of second sorted list
+        ListNode<Integer> n55 = new ListNode<>(4);
+        ListNode<Integer> n66 = new ListNode<>(6);
+        n44.next = n55;
+        n55.next = n66;
+
+        ListNode<Integer> head2 = ListRecursion.mergeList(n11, n44);    // merge two sorted list
+        System.out.print("The merged list is ");
+        head2.printList();
+        System.out.println("\n");
+
     }
+
+    private static void OtherRecursion() {
+        System.out.println("\n------------------- Other Recursion -------------------");
+        System.out.println("1. Decimal to Binary");
+        int number1 = 233;
+        System.out.printf("The decimal number {%d} converted to the binary is {%s}\n\n", number1,
+                OtherRecursion.DecimalToBinary(number1, ""));
+
+        System.out.println("2. Sum of Natural Numbers");
+        int number2 = 10;
+        System.out.printf("The sum of natural numbers from 1 to {%d} is {%d}.\n\n", number2,
+                OtherRecursion.SumOfNumbers(number2));
+
+        System.out.println("3. Fibonacci number");
+        int number3 = 6;
+        System.out.printf("The fibonacci of {%d} is {%d}.\n\n", number3, OtherRecursion.fib(number3));
+
+    }    
 }
