@@ -10,7 +10,7 @@ package recursion;
 
 import java.util.Arrays;
 
-import structures.ListNode;
+import structures.*;
 
 public class App {
     public String getGreeting() {
@@ -28,6 +28,9 @@ public class App {
 
         // List Recursion Demo
         ListRecursion();
+
+        // Tree Recursion Demo
+        TreeRecursion();
 
         // Other Recursion Demo
         OtherRecursion();        
@@ -98,6 +101,18 @@ public class App {
         head2.printList();
         System.out.println("\n");
 
+    }
+
+    private static void TreeRecursion() {
+        System.out.println("\n------------------- Tree Recursion -------------------");
+        System.out.println("1. Build a binary search tree and print the leaves");
+        int[] nums = {8, 3, 6, 9, 7, 12, 15, 2};
+        TreeNode<Integer> root1 = null;
+        for (int num : nums) {
+            root1 = TreeRecursion.insertNode(root1, num);
+        }
+
+        root1.printTree();
     }
 
     private static void OtherRecursion() {
