@@ -113,6 +113,14 @@ public class App {
         }
 
         root1.printTree();
+        System.out.println("\n");
+
+        System.out.println("2. Get the height of a binary tree");
+        System.out.printf("The height of the tree is %d\n\n", TreeRecursion.getHeight(root1));
+
+        System.out.println("3. Get the size of a binary tree");
+        System.out.printf("The size of the tree is %d\n\n", TreeRecursion.getSize(root1));
+
     }
 
     private static void OtherRecursion() {
