@@ -1,5 +1,8 @@
 package structures;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeNode<T> {
     public T item;
     public TreeNode<T> left;
@@ -40,6 +43,13 @@ public class TreeNode<T> {
         printTree(this);
     }
 
+    /**
+     * print the tree rooted at the current node in level order
+     */
+    public void printTreeLevel() {
+        printTreeLevel(this);
+    }
+
     private void printTree(TreeNode<T> node) {
         if (node == null) {
             return;
@@ -55,6 +65,29 @@ public class TreeNode<T> {
         }
 
         return;
+    }
+
+    private void printTreeLevel(TreeNode<T> root) {
+        if (root == null) {
+            return;
+        }
+
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+
+        TreeNode<T> node;
+
+        queue.add(root);
+        while (queue.size() > 0) {
+            node = queue.remove();
+            System.out.print(node.item + ", ");
+
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
     }
 
 }

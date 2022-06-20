@@ -60,5 +60,23 @@ public class TreeRecursion {
         return 1 + getSize(root.left) + getSize(root.right);
     }    
 
+    /**
+     * Recursion 3: get the mirror of the binary tree
+     * 
+     * @param root the root node
+     * @return the root node of the mirrored tree
+     */
+    public static TreeNode<Integer> mirror(TreeNode<Integer> root) {
+        if (root == null) {
+            return root;
+        }
 
+        TreeNode<Integer> left = mirror(root.left);
+        TreeNode<Integer> right = mirror(root.right);
+
+        root.left = right;
+        root.right = left;
+
+        return root;
+    }
 }
