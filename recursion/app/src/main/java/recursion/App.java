@@ -127,6 +127,15 @@ public class App {
         root2.printTreeLevel();
         System.out.println("\n");
 
+        System.out.printf("The mirrored tree is ");
+        TreeNode<Integer> root3 = TreeRecursion.mirror2(root2);
+        root3.printTreeLevel();
+        System.out.println("\n");
+
+        System.out.printf("The mirrored tree is ");
+        TreeNode<Integer> root4 = TreeRecursion.mirror3(root3);
+        root4.printTreeLevel();
+        System.out.println("\n");        
     }
 
     private static void OtherRecursion() {

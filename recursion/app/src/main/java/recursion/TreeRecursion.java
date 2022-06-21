@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.*;
+
 import structures.*;
 
 /**
@@ -61,7 +63,7 @@ public class TreeRecursion {
     }    
 
     /**
-     * Recursion 3: get the mirror of the binary tree
+     * Recursion 3: get the mirror of the binary tree, first implementation
      * 
      * @param root the root node
      * @return the root node of the mirrored tree
@@ -79,4 +81,61 @@ public class TreeRecursion {
 
         return root;
     }
+
+    /**
+     * Recursion 4: get the mirror of the binary tree, second implementation
+     * 
+     * @param root the root node
+     * @return the root node of the mirrored tree
+     */
+    public static TreeNode<Integer> mirror2(TreeNode<Integer> root) {
+        if (root == null) {
+            return root;
+        }
+
+        TreeNode<Integer> temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        mirror2(root.left);
+        mirror2(root.right);
+
+        return root;
+    }    
+
+    /**
+     * Recursion 5: get the mirror of the binary tree, third implementation
+     * 
+     * Note: use iterative approach
+     * 
+     * @param root the root node
+     * @return the root node of the mirrored tree
+     */
+    public static TreeNode<Integer> mirror3(TreeNode<Integer> root) {
+        if (root == null) {
+            return root;
+        }
+
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
+        queue.add(root);
+
+        TreeNode<Integer> node;
+        while(queue.size() > 0) {
+            node = queue.remove();
+
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+
+            TreeNode<Integer> temp = node.left;
+            node.left = node.right;
+            node.right = temp;
+        }
+
+        return root;
+    }       
 }
